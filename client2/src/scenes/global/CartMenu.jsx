@@ -48,7 +48,9 @@ const CartMenu = () => {
                 height="100%"
                 backgroundColor="white"
             >
-                <Box></Box>
+                <Box padding="30px">
+
+                </Box>
 
             </Box>
 
