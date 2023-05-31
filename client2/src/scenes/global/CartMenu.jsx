@@ -52,12 +52,35 @@ const CartMenu = () => {
                     {/* HEADER */}
                     <FlexBox mb="15px">
                         <Typography variant="h5">SHOPPING BAG ({cart.length})</Typography>
-                        <IconButton onClick{() => dispatch(setIsCartOpen({}))}>
+                        <IconButton onClick={() => dispatch(setIsCartOpen({}))}>
                             <CloseIcon/>
                         </IconButton>
                     </FlexBox>
                     {/* CART ITEMS */}
-
+                    <box>
+                    {cart.map((item) => (
+                        <Box key={`${item.attributes.name}-${item.id}`}>
+                            <FlexBox mb="15px 0">
+                                <Box flex="1 1 40%">
+                                    <img alt={item?.name}
+                                    width="123px"
+                                    height="164px"
+                                    src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}/>                
+                                </Box>
+                                <Box flex="1 1 60%">
+                                    <FlexBox mb="15px">
+                                        <Typography fontWeight="bold">
+                                            {item.attributes.name}
+                                        </Typography>
+                                        <IconButton onClick={() => dispatch(removerFromCart({id: item.id}))}>
+                                            
+                                        </IconButton>
+                                    </FlexBox>
+                                </Box>
+                            </FlexBox>
+                        </Box>
+                    ))}
+                    </box>
 
                 </Box>
 
