@@ -73,8 +73,14 @@ const CartMenu = () => {
                                             {item.attributes.name}
                                         </Typography>
                                         <IconButton onClick={() => dispatch(removerFromCart({id: item.id}))}>
-                                            
+                                            <CloseIcon/>
                                         </IconButton>
+                                    </FlexBox>
+                                    <Typorgraphy>{item.attributes.shortDescription}</Typorgraphy>
+                                    <FlexBox mt="15px 0">
+                                        <Box display="flex">
+
+                                        </Box>
                                     </FlexBox>
                                 </Box>
                             </FlexBox>
