@@ -78,7 +78,8 @@ const CartMenu = () => {
                                     </FlexBox>
                                     <Typorgraphy>{item.attributes.shortDescription}</Typorgraphy>
                                     <FlexBox mt="15px 0">
-                                        <Box display="flex">
+                                        <Box display="flex"
+                                        align>
 
                                         </Box>
                                     </FlexBox>
