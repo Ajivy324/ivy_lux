@@ -1,8 +1,7 @@
-import {createeTheme} from '@material-ui/core/styles';
+import {createTheme} from '@mui/material/styles';
 
 
-export const shades = createeTheme({
-    palette: {
+export const shades = {
         primary: {
             100: "#cccccc",
             200: "#999999",
@@ -35,9 +34,24 @@ export const shades = createeTheme({
             700: "#7c7b7b",
             800: "#535252",
             900: "#292929"
+        },
+    };
+
+export const theme = createTheme({
+    palette: {
+        primary: {
+            main: shades.primary[500]
+        },
+        secondary: {
+            main: shades.secondary[500]
+        },
+        neutral: {
+            dark: shades.neutral[700],
+            main: shades.neutral[500],
+            light: shades.neutral[100]
         }
     },
-    Typography: {
+    typography: {
         fontFamily: ["fauna-one", "sans-serif"].join(","),
         fontSize: 11,
         h1: {

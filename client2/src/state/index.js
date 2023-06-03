@@ -4,9 +4,9 @@ const intialState = {
     isCartOpen: false,
     cart: [],
     items: [],
-};
+}
 
-export const slice = createSlice({
+export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
