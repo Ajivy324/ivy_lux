@@ -86,27 +86,49 @@ const CartMenu = () => {
                                         alignItems="center"
                                         border={`1.5px solid ${shades.neutral[500]}`}
                                         >
-                                        <IconButton onClick= {() => dispatch(decreaseCount({id: item.id}))}
-                                        >
-                                            <RemoveIcon />
-                                        </IconButton>
-                                        <Typorgraphy>{item.count}</Typorgraphy>
-                                        <IconButton onClick= {() => dispatch(increaseCount({id: item.id}))}
-                                        >
-                                            <AddIcon />
-                                        </IconButton>
+                                            <IconButton onClick= {() => dispatch(decreaseCount({id: item.id}))}
+                                            >
+                                                <RemoveIcon />
+                                            </IconButton>
+                                            <Typorgraphy>{item.count}</Typorgraphy>
+                                            <IconButton onClick= {() => dispatch(increaseCount({id: item.id}))}
+                                            >
+                                                <AddIcon />
+                                            </IconButton>
                                         </Box>
+                                        {/* PRICE */}
+                                        <Typorgraphy fontWeight="bold">${item.attributes.price}</Typorgraphy>                                        
                                     </FlexBox>
                                 </Box>
                             </FlexBox>
+                            <Divider />
                         </Box>
                     ))}
                     </box>
 
+                    {/* ACTIONS */}
+                    <Box m="20px 0">
+                        <FlexBox m="20px 0">
+                            <Typography fontWeight="bold">SUBTOTAL</Typography>
+                            <Typography fontWeight="bold">${totalPrice}</Typography>
+                        </FlexBox>
+                        <Button
+                        sx={{
+                            backgroundColor: shades.primary[400],
+                            color: "white",
+                            borderRadius: "0",
+                            minWidth: "100%",
+                            padding: "20px 40px",
+                            m: "20px 0",
+                        }}
+                        onClick={() => {
+                            navigate("/checkout");
+                            dispatch(setIsCartOpen({}));
+                        }}
+                        >CHECKOUT</Button>
+                    </Box>
                 </Box>
-
             </Box>
-
         </Box>
     );
 };
