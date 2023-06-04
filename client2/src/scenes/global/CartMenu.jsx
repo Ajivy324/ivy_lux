@@ -1,4 +1,4 @@
-import {Box, Button, Divider, IconButton, Typorgraphy} from "@mui/material";
+import {Box, Button, Divider, IconButton, Typography} from "@mui/material";
 import {useSelector, useDispatch} from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
 import AddIcon from "@mui/icons-material/Add";
@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 import { shades } from "../../theme";
 import { decreaseCount,
     increaseCount,
-    removerFromCart,
+    removeFromCart,
     setIsCartOpen} from "../../state";
 import {useNavigate} from "react-router-dom";
 
@@ -20,8 +20,8 @@ const FlexBox = styled(Box)`
 const CartMenu = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const cart = useSelector((state) => state.cart);
-    const setIsCartOpen = useSelector((state) => state.setIsCartOpen);
+    const cart = useSelector((state) => state.cart.cart);
+    const isCartOpen = useSelector((state) => state.setIsCartOpen);
 
     const totalPrice = cart.reduce((total, item) => {
         return total + item.count * item.attributes.price;
@@ -74,11 +74,11 @@ const CartMenu = () => {
                                         <Typography fontWeight="bold">
                                             {item.attributes.name}
                                         </Typography>
-                                        <IconButton onClick={() => dispatch(removerFromCart({id: item.id}))}>
+                                        <IconButton onClick={() => dispatch(removeFromCart({id: item.id}))}>
                                             <CloseIcon/>
                                         </IconButton>
                                     </FlexBox>
-                                    <Typorgraphy>{item.attributes.shortDescription}</Typorgraphy>
+                                    <Typography>{item.attributes.shortDescription}</Typography>
 
                                     {/* AMOUNT */}
                                     <FlexBox mt="15px 0">
@@ -90,14 +90,14 @@ const CartMenu = () => {
                                             >
                                                 <RemoveIcon />
                                             </IconButton>
-                                            <Typorgraphy>{item.count}</Typorgraphy>
+                                            <Typography>{item.count}</Typography>
                                             <IconButton onClick= {() => dispatch(increaseCount({id: item.id}))}
                                             >
                                                 <AddIcon />
                                             </IconButton>
                                         </Box>
                                         {/* PRICE */}
-                                        <Typorgraphy fontWeight="bold">${item.attributes.price}</Typorgraphy>                                        
+                                        <Typography fontWeight="bold">${item.attributes.price}</Typography>                                        
                                     </FlexBox>
                                 </Box>
                             </FlexBox>
@@ -132,3 +132,5 @@ const CartMenu = () => {
         </Box>
     );
 };
+
+export default CartMenu;

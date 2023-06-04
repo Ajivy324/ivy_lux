@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Badge, Box, IconButton } from '@mui/material';
-import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOffOutlined, ShoppingBagOutlined } from '@mui/icons-material';
+import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOffOutlined} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import {shades} from '../../theme';
 import { setIsCartOpen } from '../../state';
@@ -10,7 +10,7 @@ import { setIsCartOpen } from '../../state';
 const Navbar = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const cart = useSelector((state) => state.cart); 
+    const cart = useSelector((state) => state.cart.cart); 
 
     return (
         <Box display="flex"
