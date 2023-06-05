@@ -130,7 +130,7 @@ const CartMenu = () => {
                 </Box>
             </Box>
         </Box>
-    );
-};
+    )
+}
 
-export default CartMenu;
+export default CartMenu

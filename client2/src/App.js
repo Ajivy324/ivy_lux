@@ -8,12 +8,13 @@ import Navbar from './scenes/global/Navbar';
 import CartMenu from './scenes/global/CartMenu';
 
 
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0,0);
-  }, [pathname])
+  }, [pathname]);
   
   return null;
 }
@@ -30,7 +31,7 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="checkout/success" element={<Confirmation />} />
         </Routes>
-        <CartMenu/>
+        <CartMenu />
       </BrowserRouter>
     </div> 
   );
