@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Badge, Box, IconButton } from '@mui/material';
-import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOffOutlined} from '@mui/icons-material';
+import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import {shades} from '../../theme';
 import { setIsCartOpen } from '../../state';
@@ -30,16 +30,18 @@ const Navbar = () => {
             justifyContent="space-between"
             alignItems="center">
                 <Box onClick={() => navigate("/")} sx={{ '&:hover': { cursor: "pointer"}}}
-                color={shades.secondary[500]}>
-                    ECOMMER
+                color={shades.secondary[500]}
+                >
+                    IVY LUX
                 </Box>
-                <box
-                display="flex"
-                justifyContent="space-between"
-                columnGap="20px"
-                zIndex="2">
+                <Box
+                    display="flex"
+                    justifyContent="space-between"
+                    columnGap="20px"
+                    zIndex="2"
+                >
                     <IconButton sx={{color: "black"}} >
-                        <SearchOffOutlined />
+                        <SearchOutlined />
                     </IconButton>
                     <IconButton sx={{color: "black"}} >
                         <PersonOutline />
@@ -67,7 +69,7 @@ const Navbar = () => {
                     <IconButton sx={{color: "black"}} >
                         <MenuOutlined />
                     </IconButton>
-                </box>
+                </Box>
 
             </Box>
         </Box>
