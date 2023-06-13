@@ -62,7 +62,7 @@ const Navbar = () => {
                     >
                     <IconButton 
                     onClick={() => dispatch(setIsCartOpen({}))}
-                    sx={{color: "blue"}} >
+                    sx={{color: "black"}} >
                         <ShoppingBagOutlined />
                     </IconButton>
                     </Badge>
