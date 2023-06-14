@@ -13,24 +13,29 @@ const Navbar = () => {
     const cart = useSelector((state) => state.cart.cart); 
 
     return (
-        <Box display="flex"
-        align-items="center"
-        width="100%"
-        height="60px"
-        backgroundColor="rgba(255,255,255, 0.95)"
-        color="black"
-        postion="fixed"
-        top="0"
-        left="0"
-        zIndex="1">
-            <Box
-            width="80"
-            margin="auto"
+        <Box 
             display="flex"
-            justifyContent="space-between"
-            alignItems="center">
-                <Box onClick={() => navigate("/")} sx={{ '&:hover': { cursor: "pointer"}}}
-                color={shades.secondary[500]}
+            align-items="center"
+            width="100%"
+            height="60px"
+            backgroundColor="rgba(255,255,255, 0.95)"
+            color="black"
+            postion="fixed"
+            top="0"
+            left="0"
+            zIndex="1"
+        >
+            <Box
+                width="80%"
+                margin="auto"
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+            >
+                <Box 
+                    onClick={() => navigate("/")} 
+                    sx={{ '&:hover': { cursor: "pointer"}}}
+                    color={shades.secondary[500]}
                 >
                     IVY LUX
                 </Box>
@@ -47,33 +52,34 @@ const Navbar = () => {
                         <PersonOutline />
                     </IconButton>
 
-                    <Badge 
-                        badgeContent={cart.length}
-                        color='secondary'
-                        invisible={cart.length === 0}
-                        sx={{"& .MuiBadge-badge": {
-                            right: 5, 
-                            top: 5, 
-                            padding: "0 4px",
-                            height: "14px",
-                            minWidth: "13px",
-                            },
-                        }}
-                    >
-                    <IconButton 
-                    onClick={() => dispatch(setIsCartOpen({}))}
-                    sx={{color: "black"}} >
-                        <ShoppingBagOutlined />
-                    </IconButton>
+                        <Badge 
+                            badgeContent={cart.length}
+                            color='secondary'
+                            invisible={cart.length === 0}
+                            sx={{
+                                "& .MuiBadge-badge": {
+                                    right: 5, 
+                                    top: 5, 
+                                    padding: "0 4px",
+                                    height: "14px",
+                                    minWidth: "13px",
+                                },
+                            }}
+                        >
+                        <IconButton 
+                            onClick={() => dispatch(setIsCartOpen({}))}
+                            sx={{color: "black"}} 
+                        >
+                            <ShoppingBagOutlined />
+                        </IconButton>
                     </Badge>
                     <IconButton sx={{color: "black"}} >
                         <MenuOutlined />
                     </IconButton>
                 </Box>
-
             </Box>
         </Box>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
