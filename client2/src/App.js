@@ -9,6 +9,7 @@ import CartMenu from './scenes/global/CartMenu';
 
 
 
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
