@@ -6,7 +6,7 @@ const Home = () => {
     
     return (
 
-        <div>Home</div>
+        <div>This is the HOME page</div>
     )
 }
 
