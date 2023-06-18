@@ -29,7 +29,18 @@ const Item = ({item, width}) => {
 
     return (
         <Box width={width}>
-
+            <Box 
+                postion="relative" 
+                onMouseOver={() => setIsHovered(true)}
+                onMouseOut={() => setIsHovered(false)}
+            >
+                <img
+                    alt={item.name}
+                    width="300px"
+                    heeight="400px"
+                    src={`http://localhost:1337${url}`}
+                />
+            </Box>
         </Box>
     )
 };
