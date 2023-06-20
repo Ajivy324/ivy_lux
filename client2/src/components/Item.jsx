@@ -37,7 +37,7 @@ const Item = ({item, width}) => {
                 <img
                     alt={item.name}
                     width="300px"
-                    heeight="400px"
+                    height="400px"
                     src={`http://localhost:1337${url}`}
                 />
             </Box>
