@@ -39,7 +39,15 @@ const Item = ({item, width}) => {
                     width="300px"
                     height="400px"
                     src={`http://localhost:1337${url}`}
+                    onClick={() => navigate(`/item/${item.id}`)}
+                    style={{cursor: "pointer"}}
                 />
+            </Box>
+            <Box
+                display={isHovered ? "blocked" : "none"}
+                
+            >
+
             </Box>
         </Box>
     )
