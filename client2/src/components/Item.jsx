@@ -45,9 +45,42 @@ const Item = ({item, width}) => {
             </Box>
             <Box
                 display={isHovered ? "blocked" : "none"}
-                
+                postion="absolute"
+                bottom="10%"
+                left="0"
+                witdth="100%"
+                padding="0 5%"
             >
+                <Box display="flex" justifyContent="space-between">
+                    {/* AMOUNT */}
+                    <Box 
+                        display="flex"
+                        alignItems="center"
+                        backgroundColor={shades.neutral[100]}
+                        borderRadius="3px"
+                    >
+                        <IconButton 
+                            onClick= {() => setCount(Math.max(count -1,1))}
+                        >
+                            <RemoveIcon />
+                        </IconButton>
+                        <Typography color={shades.primary[300]}>{count}</Typography>
+                        <IconButton 
+                            onClick= {() => setCount(count + 1)}
+                        >
+                            <AddIcon />
+                        </IconButton>
+                    </Box>
 
+                    {/* BUTTON */}
+                    <Button
+                        onClick={() => {dispatch(addToCart({item: {...item, count}}));
+                    }}
+                        sx={{backgroundColor: shades.primary[300], color: white}}
+                    >
+                        Add to Cart
+                    </Button>
+                </Box>
             </Box>
         </Box>
     )
