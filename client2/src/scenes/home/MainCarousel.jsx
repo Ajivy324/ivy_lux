@@ -57,7 +57,20 @@ const MainCarousel = () => {
                 </IconButton>
             )}
         >
-            
+            {Object.values(heroTextureImports).map((texture, index) => (
+                <Box key={`carousel-image-${ index}`}>
+                    <img
+                        src={textrue}
+                        alt={`carousel-${index}}`}
+                        style={{
+                            width: "100%",
+                            heigh: "700px",
+                            objectFit: "cover",
+                            backgroundAttachment: "fixed",
+                        }}
+                    />
+                </Box>
+            ))}
         </Carousel>
     )
 };
