@@ -8,8 +8,8 @@ import { shades } from '../../theme';
 
 // imports all image from the assests folder
 const importAll = (r) => 
-    r.keys().reduce((acc, next) => { 
-        acc[ListItem.replace("./", "")] = r(item);
+    r.keys().reduce((acc, item) => { 
+        acc[item.replace("./", "")] = r(item);
     return acc;
 }, {});
 
@@ -60,7 +60,7 @@ const MainCarousel = () => {
             {Object.values(heroTextureImports).map((texture, index) => (
                 <Box key={`carousel-image-${ index}`}>
                     <img
-                        src={textrue}
+                        src={texture}
                         alt={`carousel-${index}}`}
                         style={{
                             width: "100%",

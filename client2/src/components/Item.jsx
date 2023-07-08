@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import {IconButton, Box, Typography, useTheme, Button } from "@mui/material"
-import AddIcon from "@mui/material/Add";
+import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import {shades} from "../theme";
 import { addToCart } from "../state";
@@ -75,7 +75,7 @@ const Item = ({item, width}) => {
                     <Button
                         onClick={() => {dispatch(addToCart({item: {...item, count}}));
                     }}
-                        sx={{backgroundColor: shades.primary[300], color: white}}
+                        sx={{backgroundColor: shades.primary[300], color: "white"}}
                     >
                         Add to Cart
                     </Button>
