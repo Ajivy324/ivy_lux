@@ -28,8 +28,13 @@ const ShoppingList = () => {
     useEffect(() => {
         getItems();
     }, []);
+
+    const topRatedItems = items.filter(
+        (item) => item.attributes.category === "topRated"
+    )
+    
     return (
-        
+
     <div>ShoppingList</div>
     )
 }
