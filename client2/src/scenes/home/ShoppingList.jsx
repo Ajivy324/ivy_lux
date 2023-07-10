@@ -31,8 +31,35 @@ const ShoppingList = () => {
 
     const topRatedItems = items.filter(
         (item) => item.attributes.category === "topRated"
-    )
-    
+    );
+    const newArrivalsItems = items.filter(
+        (item) => item.attributes.category === "newArrivals"
+    );
+    const bestSellersItems = items.filter(
+        (item) => item.attributes.category === "bestSellers"
+    );
+
+    return <Box witdh="80%" margin="80px auto">
+        <Typography variant="h3" textAlign="center">
+            Our Featured <b>Products</b>
+        </Typography>
+        <Tabs
+            textColor="primary"
+            indicatorColor="primary"
+            value={value}
+            onChange={handleChange}
+            centered
+            TabIndicatorProps={{sx: {display: isNonMobile ? "block" : "none" }}}
+            sx={{
+                m: "25px",
+                "& .MuiTabs-flexContainer": {
+                    flexWrap: "wrap"
+                }
+            }} 
+        >
+
+        </Tabs>
+    </Box>
     return (
 
     <div>ShoppingList</div>
