@@ -57,7 +57,10 @@ const ShoppingList = () => {
                 }
             }} 
         >
-
+            <Tab label="All" value="all" />
+            <Tab label="NEW ARRIVALS" value="newArrivals" />
+            <Tab label="BEST SELLERS" value="bestSellers" />
+            <Tab label="TOP RATED" value="topRated" />
         </Tabs>
     </Box>
     return (
