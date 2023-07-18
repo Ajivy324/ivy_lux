@@ -6,7 +6,7 @@ import Checkout from './scenes/checkout/Checkout';
 import Confirmation from './scenes/checkout/Confirmation';
 import Navbar from './scenes/global/Navbar';
 import CartMenu from './scenes/global/CartMenu';
-
+import Footer from './scenes/global/Footer';
 
 
 
