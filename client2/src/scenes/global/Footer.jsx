@@ -17,7 +17,9 @@ const Footer = () => {
                 rowGap="30px"
                 columnGap="clamp(20px, 30px, 40px)"
             >
+                <Box width="clamp(20%, 30%, 40%)">
 
+                </Box>
             </Box>
         </Box>
     )
