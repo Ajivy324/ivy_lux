@@ -40,6 +40,22 @@ const Footer = () => {
                     <Typography mb="30px">Terms & Conditions</Typography>
                     <Typography mb="30px">Privacy Policy</Typography>
                 </Box>
+                    <Typography variant="h4" fontWeight="bold" mb="30px">
+                        Customer Care
+                    </Typography>
+                    <Typography mb="30px">Help Center</Typography>
+                    <Typography mb="30px">Track Your Order</Typography>
+                    <Typography mb="30px">Cooperate and Bulk Purchasing</Typography>
+                    <Typography mb="30px">Returns and Refunds</Typography>
+
+                <Box width="clamp(20%, 25%, 30%)">
+                <Typography variant="h4" fontWeight="bold" mb="30px">
+                        Contact Us
+                    </Typography>
+                    <Typography mb="30px">Address here</Typography>
+                    <Typography mb="30px">Email here</Typography>
+                    <Typography mb="30px">Number here</Typography>
+                </Box>
             </Box>
         </Box>
     )
