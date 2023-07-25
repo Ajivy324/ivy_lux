@@ -14,6 +14,25 @@ const ItemDetails = () => {
 
     const dispatch = useDispatch();
     const {itemId} = useNParams();
+    const {value, setValue } = useStatee("description");
+    const [count, setCount] = useState(1);
+    const [item, setItem] = useState(null);
+    const {items, setItems} = useState([]);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    async function getItem() {
+        const item = await fetch(
+            `http://localhost:1337/api/items/${itemId}?populate=images`,
+            { method: "GET" }
+        );
+        const itemJson = await item.json();
+        setItem(itemJson.data);
+    }
+
+    
 
     return (
         <div>ItemDetails</div>
