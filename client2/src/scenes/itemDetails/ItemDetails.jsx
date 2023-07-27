@@ -48,7 +48,7 @@ const ItemDetails = () => {
 
     return <Box
     width="80%" m="80px auto">
-        <Box>
+        <Box display="flex">
 
         </Box>
     </Box>
