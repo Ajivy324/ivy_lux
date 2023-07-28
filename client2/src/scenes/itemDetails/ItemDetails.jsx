@@ -48,8 +48,9 @@ const ItemDetails = () => {
 
     return <Box
     width="80%" m="80px auto">
-        <Box display="flex">
-
+        <Box display="flex" flexWrap="wrap" columGap="40px">
+            {/* IMAGEs */}
+            <Box flex="1 1 40%" mb="40px">
         </Box>
     </Box>
 };
