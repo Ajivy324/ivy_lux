@@ -61,6 +61,16 @@ const ItemDetails = () => {
             </Box>
 
             {/* ACTIONS */}
+            <Box flex="1 1 50%" mb="40px">
+                <Box display="flex" justifyContent="space-between">
+                    <Box>Home/Items</Box>
+                    <Box>Prev Next</Box>
+                </Box>
+
+                <Box m="65px 0 25px 0">
+                    <Typography></Typography>
+                </Box>
+            </Box>
         </Box>
     </Box>
 };
