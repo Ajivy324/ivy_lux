@@ -69,6 +69,8 @@ const ItemDetails = () => {
 
                 <Box m="65px 0 25px 0">
                     <Typography></Typography>
+                    <Typography></Typography>
+                    <Typography></Typography>
                 </Box>
             </Box>
         </Box>
