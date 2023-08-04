@@ -74,6 +74,28 @@ const ItemDetails = () => {
                         {item?.attributes?.longDescription}
                     </Typography>
                 </Box>
+
+                <Box display="flex" alignItems="center" minHeight="50px">
+                    <Box 
+                        display="flex" 
+                        alignItems="center" 
+                        border={`1.5px solid ${shades.neutral[300]}`} 
+                        mr="20px" 
+                        p="2px 5px" 
+                    >
+                        <IconButton 
+                                onClick= {() => setCount(Math.max(count -1,1))}
+                            >
+                                <RemoveIcon />
+                            </IconButton>
+                            <Typography color={shades.primary[300]}>{count}</Typography>
+                            <IconButton 
+                                onClick= {() => setCount(count + 1)}
+                            >
+                                <AddIcon />
+                        </IconButton>
+                    </Box>
+                </Box>
             </Box>
         </Box>
     </Box>
