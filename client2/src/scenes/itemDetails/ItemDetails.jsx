@@ -88,7 +88,7 @@ const ItemDetails = () => {
                             >
                                 <RemoveIcon />
                             </IconButton>
-                            <Typography color={shades.primary[300]}>{count}</Typography>
+                            <Typography sx={{ p: "0 5px"}}>{count}</Typography>
                             <IconButton 
                                 onClick= {() => setCount(count + 1)}
                             >
