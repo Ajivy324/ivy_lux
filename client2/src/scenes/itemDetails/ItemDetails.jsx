@@ -75,6 +75,7 @@ const ItemDetails = () => {
                     </Typography>
                 </Box>
 
+                {/* COUNT AND BUTTON*/}
                 <Box display="flex" alignItems="center" minHeight="50px">
                     <Box 
                         display="flex" 
@@ -108,7 +109,29 @@ const ItemDetails = () => {
                         ADD TO CART
                     </Button>
                 </Box>
+
+                <Box>
+                    <Box m="20px 0 5px 0" display="flex">
+                        <FavoriteBorderOutlinedIcon/>
+                        <Typography sx={{ ml: "5px" }}></Typography>
+                    </Box>
+                    <Typography>CATEGORIES: {item?.attributes?.category}</Typography>
+                </Box>
             </Box>
+        </Box>
+
+
+        {/* INFORMATION*/}
+        <Box m="20px 0">
+            <Tabs value={value} onChange={handleChange}>
+                <Tab label="DESCRIPTION" value="description"/>
+                <Tab label="REVIEWS" value="reviews"/>
+            </Tabs>
+        </Box>
+        <Box display="flex" flexWrap="wrap" gap="15px">
+            {value === "description" && (
+                <div>{item?.attributes?.longDescription}</div>
+            )}
         </Box>
     </Box>
 };
