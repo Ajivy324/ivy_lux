@@ -132,6 +132,7 @@ const ItemDetails = () => {
             {value === "description" && (
                 <div>{item?.attributes?.longDescription}</div>
             )}
+            {value === "reviews"}
         </Box>
     </Box>
 };
