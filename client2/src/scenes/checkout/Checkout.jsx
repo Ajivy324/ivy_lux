@@ -8,6 +8,7 @@ import { shades } from "../../theme";
 
 const Checkout = () => {
     const [activeStep, setActiveStep] = useState(0)
+    const cart = useSelector((state) => state.cart.cart);
 
     return (
 
