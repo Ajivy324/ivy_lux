@@ -43,6 +43,20 @@ const checkoutSchema = [
             city: yup.string().required("required"),
             state: yup.string().required("required"),
             zipCode: yup.string().required("required"),
+        }),
+        shippingAddress: yup.object().shape({
+            isSameAddress: yup.boolean(),
+            firstName: yup.string().when("isSameAddre3ss", {
+                is: false,
+                then: yup.string().required("required")
+            },
+            lastName: yup.string().required("required"),
+            county: yup.string().required("required"),
+            street1: yup.string().required("required"),
+            street2: yup.string(),
+            city: yup.string().required("required"),
+            state: yup.string().required("required"),
+            zipCode: yup.string().required("required"),
         })
     })
 ]
