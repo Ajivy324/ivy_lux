@@ -75,7 +75,11 @@ const checkoutSchema = [
                 is: false,
                 then: yup.string().required("required")
             }),
-        })
+        }),
+    }),
+    yup.object().shape({
+        email: yup.string().required("required"),
+        phoneNumber: yup.string().required("required")
     })
 ]
 
@@ -105,7 +109,7 @@ const Checkout = () => {
             <Formik
                 onSubmit={handleFormSubmit}
                 intitialValues={initialValues}
-                validationSchema={}
+                validationSchema={checkoutSchema[activeStep]}
             >
 
             </Formik>
