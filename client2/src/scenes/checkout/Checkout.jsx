@@ -111,7 +111,16 @@ const Checkout = () => {
                 intitialValues={initialValues}
                 validationSchema={checkoutSchema[activeStep]}
             >
+                {({
+                    values,
+                    errors,
+                    touched,
+                    handleBlur,
+                    handleChange,
+                    handleSubmit,
+                    setFieldValue
 
+                }) }
             </Formik>
         </Box>
     </Box>
