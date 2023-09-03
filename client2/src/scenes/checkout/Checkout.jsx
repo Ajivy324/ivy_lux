@@ -4,6 +4,7 @@ import  {Box, Button, Stepper, Step, StepLabel} from "@mui/material"
 import { Formik } from "formik"
 import { useState } from "react"
 import * as yup from "yup"
+import Shipping from "./Shipping"
 import { shades } from "../../theme";
 
 const initialValues = {
@@ -86,7 +87,7 @@ const checkoutSchema = [
 const Checkout = () => {
     const [activeStep, setActiveStep] = useState(0)
     const cart = useSelector((state) => state.cart.cart);
-    const isFirstSteep = activeStep === 0;
+    const isFirstStep = activeStep === 0;
     const isSecondStep = activeStep === 1;
 
     const handleFormSubmit = async (value, actions) => {
@@ -120,7 +121,20 @@ const Checkout = () => {
                     handleSubmit,
                     setFieldValue
 
-                }) }
+                }) => (
+                    <form onSubmit = {handleSubmit}>
+                        {isFirstStep && (
+                            <Shipping
+                                values={values}
+                                errors={errors}
+                                touched={touched}
+                                handleBlur={handleBlur}
+                                handleChange={handleChange}
+                                setFieldValue={setFieldValue}
+                            />
+                        )}
+                    </form>
+                )}
             </Formik>
         </Box>
     </Box>

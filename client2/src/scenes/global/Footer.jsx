@@ -4,7 +4,7 @@ import { Box, Typography} from "@mui/material";
 import { shades } from "../../theme";
 
 const Footer = () => {
-    const { palette: { nuetral } } = useTheme();
+    const { palette: { neutral } } = useTheme();
 
     return (
         <Box mt="70px" p="40px 0" backgroundColor={neutral.light}>
