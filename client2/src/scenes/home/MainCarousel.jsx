@@ -10,10 +10,10 @@ import { shades } from '../../theme';
 const importAll = (r) => 
     r.keys().reduce((acc, item) => { 
         acc[item.replace("./", "")] = r(item);
-    return acc;
-}, {});
+        return acc;
+    }, {});
 
-export const heroTextureImports = importAll(
+const heroTextureImports = importAll(
     require.context("../../assets", false, /\.(png|jpe?g|svg)$/)
 );
 
