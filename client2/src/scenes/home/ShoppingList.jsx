@@ -27,7 +27,7 @@ const ShoppingList = () => {
 
     useEffect(() => {
         getItems();
-    }, []);
+    }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
     const topRatedItems = items.filter(
         (item) => item.attributes.category === "topRated"
@@ -72,16 +72,16 @@ const ShoppingList = () => {
                 columnGap="1.33%"
             >
                 {value === "all" && items.map((item) => (
-                    <Item item={item} key={`${item.id}`}/>
+                    <Item item={item} key={`${item.name}-${item.id}`}/>
                 ))}
                 {value === "newArrivals" && newArrivalsItems.map((item) => (
-                    <Item item={item} key={`${item.id}`}/>
+                    <Item item={item} key={`${item.name}-${item.id}`}/>
                 ))}
                 {value === "bestSellers" && bestSellersItems.map((item) => (
-                    <Item item={item} key={`${item.id}`}/>
+                    <Item item={item} key={`${item.name}-${item.id}`}/>
                 ))}
                 {value === "topRated" && topRatedItems.map((item) => (
-                    <Item item={item} key={`${item.id}`}/>
+                    <Item item={item} key={`${item.name}-${item.id}`}/>
                 ))}
             </Box>
         </Box>
