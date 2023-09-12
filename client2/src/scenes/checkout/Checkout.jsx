@@ -91,54 +91,70 @@ const Checkout = () => {
     const isFirstStep = activeStep === 0;
     const isSecondStep = activeStep === 1;
 
-    const handleFormSubmit = async (value, actions) => {
+    const handleFormSubmit = async (values, actions) => {
         setActiveStep(activeStep + 1);
+
+        // copies the billing  address onto the shipping address
+        if(isFirstStep && values.shippingAddress.isSameAddress){
+            actions.setFieldValue("shippingAddress", {
+                ...values.billingAddress,
+                isSameAddress: true,
+            })
+        }
+
+        if(isSecondStep){
+            makePayment(values);
+
+            actions.setTouched({});
+        }
     }
 
-    async function makePayment(values){
+    async function makePayment(values){}
 
-    }
-    return <Box width="80%" m="100px auto">
-        <Stepper activeStep={activeStep} sx={{m: "20px 0"}}>
-            <Step>
-                <StepLabel>Billing</StepLabel>
-            </Step>
-            <Step>
-                <StepLabel>Payment</StepLabel>
-            </Step>
-        </Stepper>
-        <Box>
-            <Formik
-                onSubmit={handleFormSubmit}
-                intitialValues={initialValues}
-                validationSchema={checkoutSchema[activeStep]}
-            >
-                {({
-                    values,
-                    errors,
-                    touched,
-                    handleBlur,
-                    handleChange,
-                    handleSubmit,
-                    setFieldValue
 
-                }) => (
-                    <form onSubmit = {handleSubmit}>
-                        {isFirstStep && (
-                            <Shipping
-                                values={values}
-                                errors={errors}
-                                touched={touched}
-                                handleBlur={handleBlur}
-                                handleChange={handleChange}
-                                setFieldValue={setFieldValue}
-                            />
-                        )}
-                    </form>
-                )}
-            </Formik>
+    return (
+        <Box width="80%" m="100px auto">
+            <Stepper activeStep={activeStep} sx={{m: "20px 0"}}>
+                <Step>
+                    <StepLabel>Billing</StepLabel>
+                </Step>
+                <Step>
+                    <StepLabel>Payment</StepLabel>
+                </Step>
+            </Stepper>
+            <Box>
+                <Formik
+                    onSubmit={handleFormSubmit}
+                    intitialValues={initialValues}
+                    validationSchema={checkoutSchema[activeStep]}
+                >
+                    {({
+                        values,
+                        errors,
+                        touched,
+                        handleBlur,
+                        handleChange,
+                        handleSubmit,
+                        setFieldValue
+
+                    }) => (
+                        <form onSubmit = {handleSubmit}>
+                            {isFirstStep && (
+                                <Shipping
+                                    values={values}
+                                    errors={errors}
+                                    touched={touched}
+                                    handleBlur={handleBlur}
+                                    handleChange={handleChange}
+                                    setFieldValue={setFieldValue}
+                                />
+                            )}
+                        </form>
+                    )}
+                </Formik>
+            </Box>
         </Box>
-    </Box>
+    )
 };
 
 export default Checkout
