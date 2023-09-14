@@ -5,6 +5,7 @@ import { Formik } from "formik"
 import { useState } from "react"
 import * as yup from "yup"
 import Shipping from "./Shipping"
+import Payment from "./Payment"
 import { shades } from "../../theme";
 
 
@@ -149,6 +150,16 @@ const Checkout = () => {
                                     setFieldValue={setFieldValue}
                                 />
                             )}
+                            {isSecondStep && (
+                                <Payment
+                                    values={values}
+                                    errors={errors}
+                                    touched={touched}
+                                    handleBlur={handleBlur}
+                                    handleChange={handleChange}
+                                    setFieldValue={setFieldValue}
+                                />
+                            )}
                             <Box display="flex" justifyContent="space-between" gap="50px">
                                 {isSecondStep && (
                                     <Button
@@ -171,14 +182,14 @@ const Checkout = () => {
                                         color="primary"
                                         variant="contained"
                                         sx={{
-                                            backgroundColor: shades.primary[200],
+                                            backgroundColor: shades.primary[400],
                                             boxShadow: "none",
                                             color: "white",
                                             borderRadius: 0,
                                             padding: "15px 40px"
                                         }}
                                         onClick={() => setActiveStep - 1}
-                                        >Next</Button>
+                                        >{isFirstStep ? Next: "Place Order "}</Button>
                             </Box>
                         </form>
                     )}
