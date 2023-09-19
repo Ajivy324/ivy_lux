@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Typography } from "@mui/material";
-import {TextField} from "@mui/material";
+import { Box, Typography, TextField } from "@mui/material";
+
 
 
 const Payment = (values, touched, errors, handleBlur, handleChange) => {
@@ -35,7 +35,7 @@ const Payment = (values, touched, errors, handleBlur, handleChange) => {
                     name="phoneNumber"
                     error={!!touched.phoneNumber && !! errors.phoneNumber}
                     helperText={touched.phoneNumber && errors.phoneNumber}
-                    sx={{ gridColumn: "span 4", marginBottom: "15px"}}
+                    sx={{ gridColumn: "span 4"}}
                 />
             </Box>
         </Box>
