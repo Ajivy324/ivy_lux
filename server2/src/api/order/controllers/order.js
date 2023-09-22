@@ -12,13 +12,24 @@ module.exports = createCoreController('api::order.order',({ strapi }) => ({
 
         try{
             // retrieve item information
-            const lineItems = await Promise.all
-            products.map(async(product) => {
-                const item =  await  strapi
-                .service("api::item.item")
-                .findOne(product.id);
-            })
+            const lineItems = await Promise.all(
+                products.map(async(product) => {
+                    const item =  await  strapi
+                        .service("api::item.item")
+                        .findOne(product.id);
 
+                    return{
+                        price_data: {
+                            currency: "usd",
+                            product_data: {
+                                name: item.name
+                            },
+                            unit_amount: item.price * 100,
+                        },
+                        quantity: product.count,
+                    }
+                })
+            );
         } catch (error){
 
         }
