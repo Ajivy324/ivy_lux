@@ -212,8 +212,8 @@ const Checkout = () => {
                                             borderRadius: 0,
                                             padding: "15px 40px"
                                         }}
-                                        onClick={() => setActiveStep - 1}
-                                        >{isFirstStep ? "Next" : "Place Order "}</Button>
+                                        >
+                                            {isFirstStep ? "Next" : "Place Order "}</Button>
                             </Box>
                         </form>
                     )}
