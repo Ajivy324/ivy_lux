@@ -15,10 +15,10 @@ const ItemDetails = () => {
 
     const dispatch = useDispatch();
     const {itemId} = useParams();
-    const {value, setValue } = useState("description");
+    const [value, setValue ] = useState("description");
     const [count, setCount] = useState(1);
     const [item, setItem] = useState(null);
-    const {items, setItems} = useState([]);
+    const [items, setItems] = useState([]);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);

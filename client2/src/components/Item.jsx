@@ -11,7 +11,7 @@ const Item = ({item, width}) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [count, setCount] = useState(1);
-    const {isHovered, setIsHovered} = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const {
         palette: { neutral },
     } = useTheme();
