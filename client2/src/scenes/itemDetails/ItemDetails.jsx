@@ -14,7 +14,7 @@ import Item from "../../components/Item"
 const ItemDetails = () => {
 
     const dispatch = useDispatch();
-    const {itemId} = useParams();
+    const { itemId } = useParams();
     const [value, setValue ] = useState("description");
     const [count, setCount] = useState(1);
     const [item, setItem] = useState(null);
@@ -26,7 +26,7 @@ const ItemDetails = () => {
 
     async function getItem() {
         const item = await fetch(
-            `http://localhost:1337/api/items/${itemId}?populate=images`,
+            `http://localhost:1337/api/items/${itemId}?populate=image`,
             { method: "GET" }
         );
         const itemJson = await item.json();
@@ -35,7 +35,7 @@ const ItemDetails = () => {
 
     async function getItems() {
         const items = await fetch(
-            `http://localhost:1337/api/items?populate=images`,
+            `http://localhost:1337/api/items?populate=image`,
             { method: "GET" }
         );
         const itemsJson = await items.json();
@@ -49,7 +49,7 @@ const ItemDetails = () => {
 
     return <Box
     width="80%" m="80px auto">
-        <Box display="flex" flexWrap="wrap" columGap="40px">
+        <Box display="flex" flexWrap="wrap" columnGap="40px">
             {/* IMAGEs */}
             <Box flex="1 1 40%" mb="40px">
                 <img 
@@ -72,7 +72,7 @@ const ItemDetails = () => {
                     <Typography variant="h3">{item?.attributes?.name}</Typography>
                     <Typography>${item?.attributes?.price}</Typography>
                     <Typography sx={{ mt: "20px"}}>
-                        {item?.attributes?.longDescription}
+                        {item?.attributes?.longDescrip}
                     </Typography>
                 </Box>
 
@@ -131,7 +131,7 @@ const ItemDetails = () => {
         </Box>
         <Box display="flex" flexWrap="wrap" gap="15px">
             {value === "description" && (
-                <div>{item?.attributes?.longDescription}</div>
+                <div>{item?.attributes?.longDescrip}</div>
             )}
             {value === "reviews" && <div>reviews</div>}
         </Box>
