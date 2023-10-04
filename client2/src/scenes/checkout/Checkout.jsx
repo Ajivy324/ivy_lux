@@ -109,10 +109,9 @@ const Checkout = () => {
 
         if(isSecondStep){
             makePayment(values);
-
-            actions.setTouched({});
         }
-    }
+            actions.setTouched({});
+    };
 
     async function makePayment(values){
         const stripe = await stripePromise;
