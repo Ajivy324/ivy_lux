@@ -118,7 +118,7 @@ const AddressForm = ({
                 name={formattedName("state")}
                 error={formattedError("state")}
                 helperText={formattedHelper("state")}
-                sx={{ gridColumn: "span 1fr"}}
+                sx={{ gridColumn: "1fr"}}
             />
             <TextField 
                 fullWidth
@@ -130,7 +130,7 @@ const AddressForm = ({
                 name={formattedName("zipCode")}
                 error={formattedError("zipCode")}
                 helperText={formattedHelper("zipCode")}
-                sx={{ gridColumn: "span 1fr"}}
+                sx={{ gridColumn: "1fr"}}
             />
 
         </Box>
