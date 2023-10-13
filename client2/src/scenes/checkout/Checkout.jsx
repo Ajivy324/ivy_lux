@@ -15,14 +15,14 @@ const stripePromise = loadStripe(
 
 const initialValues = {
     billingAddress: {
-        firstName: "",
-        lastName: "",
-        county: "",
-        street1: "",
-        street2: "",
-        city: "",
-        state: "",
-        zipCode: "",
+        firstName: " ",
+        lastName: " ",
+        county: " ",
+        street1: " ",
+        street2: " ",
+        city: " ",
+        state: " ",
+        zipCode: " ",
     },
     shippingAddress: {
         isSameAddress: true,
