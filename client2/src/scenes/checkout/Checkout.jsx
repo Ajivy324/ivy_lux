@@ -26,17 +26,17 @@ const initialValues = {
     },
     shippingAddress: {
         isSameAddress: true,
-        firstName: "",
-        lastName: "",
-        county: "",
-        street1: "",
-        street2: "",
-        city: "",
-        state: "",
-        zipCode: "",
+        firstName: " ",
+        lastName: " ",
+        county: " ",
+        street1: " ",
+        street2: " ",
+        city: " ",
+        state: " ",
+        zipCode: " ",
     },
-    email: "",
-    phoneNumber:""
+    email: " ",
+    phoneNumber:" "
 }
 
 const checkoutSchema = [
